@@ -6,7 +6,7 @@
 # f + g == Polynomial([-7, 19, 3, 5])
 # f(1) == 6
 
-from polynomial import ZERO, Polynomial
+from interpolate.polynomial import ZERO, Polynomial
 
 
 def interpolate(points):
@@ -18,7 +18,7 @@ def interpolate(points):
     x_vals = [p[0] for p in points]
     if len(set(x_vals)) < len(x_vals):
         raise ValueError('Not all x values are distinct.')
-    terms = [single_term(points, i) for i in range (0, len([points]))]
+    terms = [single_term(points, i) for i in range(len(points))]
     # Sum all the terms using zero polynomial as the start value
     return sum(terms, ZERO)
 
